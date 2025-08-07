@@ -11,15 +11,37 @@
 </head>
 <body>
     
-    <header>
-
+    <header class="text-center">
+        <h1 class="text-3xl font-bold">Todo List Application</h1>
     </header>
 
-    <main>
+    <main class="px-[16px]">
 
+        <form>
+            <div class="flex justify-center mt-5 mb-5">
+                <input type="text" id="todo-input" placeholder="Add a new todo" class="border rounded p-2 w-1/2">
+                <input type="date" id="date-input" placeholder="Add a new todo" class="border rounded p-2 w-1/2">
+                <button type="button" onclick="validateForm();" class="ml-2 bg-blue-500 text-white rounded p-2">Add Todo</button>
+            </div>
+
+        </form>
+
+        <section class="flex justify-between">
+            <button id="filter-button" class="rounded-[4px] bg-yellow-500 text-white p-2" >Filter</button>
+            <button onclick="clearTodos();" class="rounded-[4px] bg-red-500 text-white p-2"> Delete All</button>
+        </section>
+
+        <section id="todo-list" class="mt-5">
+            <div>
+                <p class="text-gray-700">No todos added yet.</p>
+            </div>
+        </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <p class="text-center text-gray-500 mt-5">© 2025 Todo List Application</p>
+    </footer>
+    
 
     <script src="js/script.js"> </script>
 </body>
