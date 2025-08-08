@@ -10,7 +10,7 @@
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    
+  <div class="container">  
     <header class="text-center">
         <h1 class="text-3xl font-bold">Todo List Application</h1>
     </header>
@@ -20,27 +20,42 @@
         <form>
             <div class="flex justify-center mt-5 mb-5">
                 <input type="text" id="todo-input" placeholder="Add a new todo" class="border rounded p-2 w-1/2">
-                <input type="date" id="date-input" placeholder="Add a new todo" class="border rounded p-2 w-1/2">
-                <button type="button" onclick="validateForm();" class="ml-2 bg-blue-500 text-white rounded p-2">Add Todo</button>
+                <input type="date" id="date-input" placeholder="Add a new todo" class="ml-2 border rounded p-2 w-1/2">
+                <button type="button" onclick="validateForm();" class="add-todo">+</button>
             </div>
 
         </form>
 
         <section class="flex justify-between">
-            <button id="filter-button" class="rounded-[4px] bg-yellow-500 text-white p-2" >Filter</button>
-            <button onclick="clearTodos();" class="rounded-[4px] bg-red-500 text-white p-2"> Delete All</button>
+            <select id="filter-button" class="border rounded p-2">
+                <option value="all">Filter</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+            <button class="delete-all" onclick="clearTodos();"> Delete All</button>
         </section>
 
-        <section id="todo-list" class="mt-5">
-            <div>
-                <p class="text-gray-700">No todos added yet.</p>
-            </div>
-        </section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="todo-table-body">
+                <tr><td colspan="4" style="text-align: center">No task found</td></tr>
+            </tbody>
+        </table>
+
     </main>
 
     <footer>
         <p class="text-center text-gray-500 mt-5">© 2025 Todo List Application</p>
     </footer>
+    </div> 
+
     
 
     <script src="js/script.js"> </script>
